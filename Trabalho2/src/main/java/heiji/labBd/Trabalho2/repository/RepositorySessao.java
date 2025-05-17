@@ -7,5 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import heiji.labBd.Trabalho2.model.Sessao;
 
 public interface RepositorySessao extends JpaRepository<Sessao, Integer>{
-	List<Sessao> buscaSesaaoIp(String ip);
+	public List<Sessao> findBybuscaSesaaoASCip(String ip);
+
 }

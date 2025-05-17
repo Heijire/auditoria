@@ -1,0 +1,36 @@
+-telas
+quase sessao  
+quase pagina
+requisisao
+link
+log
+
+-java
+sessao --
+pagina --
+requisisao
+link
+log
+
+-controller
+sessao
+pagina
+requisisao
+link
+log
+
+
+-repository
+sessao -- 
+pagina --- 
+
+deve ser possível buscar logs por IP
+
+buscar requisições por tempo (Usar menor que)
+
+deve ser possível buscar requisições por usuário de sessão
+
+deve ser possível buscar a quantidade de páginas que um
+determinado link aparece, chamando uma UDF.
+
+maven site(falar com o angelo)

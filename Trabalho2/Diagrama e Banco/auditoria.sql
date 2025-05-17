@@ -79,16 +79,16 @@ begin
 end
 go
 --TESTE para ver se  a trigger funciona corretamente
-insert into sessao values (112, 'RENATO', '0')
-SELECT * FROM sessao
-insert into sessao values (100, 'RENATO', '1.1.1.1')
-SELECT * FROM sessao
-insert into sessao values (114, 'RENATO', '55.5.5.533')
-SELECT * FROM sessao
-insert into sessao values (115, 'RENATO', 'aaaaa')
-SELECT * FROM sessao
-insert into sessao values (116, 'RENATO', 'a.a.aa.a')
-SELECT * FROM sessao
+--insert into sessao values (112, 'RENATO', '0')
+--SELECT * FROM sessao
+--insert into sessao values (100, 'RENATO', '1.1.1.1')
+--SELECT * FROM sessao
+--insert into sessao values (114, 'RENATO', '55.5.5.533')
+--SELECT * FROM sessao
+--insert into sessao values (115, 'RENATO', 'aaaaa')
+--SELECT * FROM sessao
+--insert into sessao values (116, 'RENATO', 'a.a.aa.a')
+--SELECT * FROM sessao
 
 --CRIA ATRIGER PARA TRATAR O REQUISITO DE HTTP VALIDO
 go
@@ -106,16 +106,15 @@ begin
 end
 go
 --TESTE SE A TRIGGER FUNCIONA CORRETAMENTE
-insert into sessao values (101, 'Teste', '192.168.1.1');
-insert into pagina values (101, 'htmlTeste', 'teste', 'teste', 'teste', 1024);
-insert into requisissao values (101, 455, 10, 101, 101)
-select * from requisissao
-insert into requisissao values (102, 90, 10, 101, 101)
-select * from requisissao
-insert into requisissao values (103, 600, 10, 101, 101)
-select * from requisissao
-
-Go
+--insert into sessao values (101, 'Teste', '192.168.1.1');
+--insert into pagina values (101, 'htmlTeste', 'teste', 'teste', 'teste', 1024);
+--insert into requisissao values (101, 455, 10, 101, 101)
+--select * from requisissao
+--insert into requisissao values (102, 90, 10, 101, 101)
+--select * from requisissao
+--insert into requisissao values (103, 600, 10, 101, 101)
+--select * from requisissao
+--Go
 --CRIA ATRIGER PARA TRATAR O REQUISITO DE tempo VALIDO
 create trigger t_tempo on requisissao
 after insert, update
@@ -130,12 +129,12 @@ begin
 	end
 end
 go--TESTE SE A TRIGGER FUNCIONA CORRETAMENTE
-insert into sessao values (102, 'Teste', '192.168.1.1');
-insert into pagina values (102, 'htmlTeste', 'teste', 'teste', 'teste', 1024);
-insert into requisissao values (103, 455, 61, 102, 102)
-select * from requisissao
-insert into requisissao values (102, 455, 60, 102, 102)
-select * from requisissao
+--insert into sessao values (102, 'Teste', '192.168.1.1');
+--insert into pagina values (102, 'htmlTeste', 'teste', 'teste', 'teste', 1024);
+--insert into requisissao values (103, 455, 61, 102, 102)
+--select * from requisissao
+--insert into requisissao values (102, 455, 60, 102, 102)
+--select * from requisissao
 go
 --CRIA ATRIGER PARA TRATAR O REQUISITO DE tamanho VALIDO
 create trigger t_tamanho on pagina
@@ -152,12 +151,12 @@ begin
 end
 go
 --teste 
-insert into pagina values (103, 'gogle', 'html', 'teste', 'ww.w', 12)
-select * FROM pagina
-go
-insert into pagina values (118, 'goagle', 'hal', 'taa', 'waaa', 1048577)
-select * FROM pagina
-go
+--insert into pagina values (103, 'gogle', 'html', 'teste', 'ww.w', 12)
+--select * FROM pagina
+--go
+--insert into pagina values (118, 'goagle', 'hal', 'taa', 'waaa', 1048577)
+--select * FROM pagina
+--go
 
 --CRIA ATRIGER PARA TRATAR O REQUISITO DE target VALIDO
 create trigger t_target on link
@@ -171,13 +170,26 @@ begin
 		@target not like '_parent' and
 		@target not like '_top' )
 	begin
-		raiserror('Target Invalido => Target validos são apenas: _blank, _self, _parent, _top.', 16, 1)
+		raiserror('Target Invalido => Target validos sï¿½o apenas: _blank, _self, _parent, _top.', 16, 1)
 		rollback transaction
 	end
 end
 go
 -- teste
-insert into link values (100, 'ww.google', 'google', '_blank')
-select * from link
-insert into link values (110, 'ww.google', 'google', '_teste')
-select * from link
+--insert into link values (100, 'ww.google', 'google', '_blank')
+--select * from link
+--insert into link values (110, 'ww.google', 'google', '_teste')
+--select * from link
+--go
+
+create function udf_contar(@idLink int)
+returns int
+as begin
+	declare @resultado int
+	
+	set @resultado = (select count(idPagina) from pagina_Link where idLink = @idLink)
+	return @resultado
+end 
+go
+
+

@@ -7,7 +7,8 @@ import heiji.labBd.Trabalho2.model.Pagina;
 
 public interface RepositoryPagina extends JpaRepository<Pagina, Integer>{
 
-	String buscarPaginaURL(String url);
-	List<Pagina>buscarPaginaTamanho(int tamanho);
+	public List<Pagina> findByPaginaurlASCurl(String url);
+	
+	public List<Pagina> findByPaginaTamanhoASCtamanho(int tamanho);
 	
 }
