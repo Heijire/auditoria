@@ -7,8 +7,8 @@ import heiji.labBd.Trabalho2.model.Pagina;
 
 public interface RepositoryPagina extends JpaRepository<Pagina, Integer>{
 
-	public List<Pagina> findByPaginaurlASCurl(String url);
+	public List<Pagina> findByUrlOrderByUrlAsc(String url);
 	
-	public List<Pagina> findByPaginaTamanhoASCtamanho(int tamanho);
+	public List<Pagina> findByTamanhoOrderByTamanhoAsc(int tamanho);
 	
 }

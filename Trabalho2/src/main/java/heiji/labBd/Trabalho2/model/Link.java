@@ -25,7 +25,7 @@ public class Link {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idLink", nullable = false)
-	private int idlink;
+	private int idLink;
 	@Column(name = "destino", length = 50, nullable = false)
 	private String destino;
 	@Column(name = "titulo", length = 50, nullable = false)

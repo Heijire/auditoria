@@ -1,0 +1,78 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>REQUISIÇÃO</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<link rel="stylesheet" href="./css/estilo.css">
+</head>
+<body>
+	<!-- Navegação -->
+	<ul class="nav nav-pills nav-fill">
+		<li class="nav-item"><a class="nav-link" href="index.jsp">TELA INICIAL</a></li>
+		<li class="nav-item"><a class="nav-link" href="sessao.jsp">SESSAO</a></li>
+		<li class="nav-item"><a class="nav-link" href="log.jsp">LOG</a></li>
+		<li class="nav-item"><a class="nav-link active" href="requisicao.jsp">REQUISICAO</a></li>
+		<li class="nav-item"><a class="nav-link" href="pagina.jsp">PAGINA</a></li>
+		<li class="nav-item"><a class="nav-link" href="link.jsp">LINK</a></li>
+	</ul>
+	<br />
+	
+	<div class="form-container text-center">
+		<h2 class="mb-4">REQUISIÇÃO</h2>
+		<form action="/requisicoes/salvar" method="post">
+			<input type="hidden" name="idRequisicao" value="${requisicao.idRequisicao}" />
+
+			<div class="mb-3">
+				<input type="text" name="tempo" placeholder="Tempo (ms)" class="form-control" value="${requisicao.tempo}" required />
+			</div>
+			<div class="mb-3">
+				<input type="text" name="codigoHttp" placeholder="Código HTTP" class="form-control" value="${requisicao.codigoHttp}" required />
+			</div>
+			<div class="mb-3">
+				<input type="text" name="sessao.idSessao" placeholder="ID da Sessão" class="form-control" value="${requisicao.sessao.idSessao}" required />
+			</div>
+
+			<div class="d-flex justify-content-between flex-wrap gap-2">
+				<button type="submit" class="btn btn-success">Adicionar</button>
+				<a href="/requisicoes" class="btn btn-primary">Buscar</a>
+				<c:if test="${not empty requisicao.idRequisicao}">
+					<a href="/requisicoes/editar?id=${requisicao.idRequisicao}" class="btn btn-warning">Atualiza</a>
+					<a href="/requisicoes/deletar?id=${requisicao.idRequisicao}" class="btn btn-danger" onclick="return confirm('Deseja remover?')">Remove</a>
+				</c:if>
+			</div>
+		</form>
+	</div>
+
+	<!-- Tabela opcional -->
+	<c:if test="${not empty requisicoes}">
+		<div class="container mt-4">
+			<h4 class="text-center mb-3">Requisições Registradas</h4>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Tempo</th>
+						<th>Código HTTP</th>
+						<th>ID Sessão</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="r" items="${requisicoes}">
+						<tr>
+							<td>${r.idRequisicao}</td>
+							<td>${r.tempo}</td>
+							<td>${r.codigoHttp}</td>
+							<td>${r.sessao.idSessao}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+	</c:if>
+</body>
+</html>

@@ -25,15 +25,15 @@ import lombok.ToString;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Requisissao {
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idRequisissao", nullable = false)
 	private int idRequisissao;
 	@Column(name = "http", nullable = false)
 	private int http;
 	@Column(name = "tempo", nullable = false)
 	private int tempo;
-	@ManyToOne(targetEntity = Sessao.class, fetch = FetchType.LAZY )
-	@JoinColumn(name = "idSessao", nullable =  false)
+	@ManyToOne(targetEntity = Sessao.class, fetch = FetchType.LAZY)
+	@JoinColumn(name = "idSessao", nullable = false)
 	private Sessao sessao;
 	@ManyToOne(targetEntity = Pagina.class, fetch = FetchType.LAZY)
 	@JoinColumn(name = "idPagina", nullable = false)

@@ -40,9 +40,10 @@ public class Pagina {
 	private int tamanho;
     @ManyToMany
     @JoinTable(
-        name = "pagina_link",
-        joinColumns = @JoinColumn(name = "pagina_id"),
-        inverseJoinColumns = @JoinColumn(name = "link_id")
-    )
+    	    name = "pagina_link",
+    	    joinColumns = @JoinColumn(name = "idPagina"),
+    	    inverseJoinColumns = @JoinColumn(name = "idLink")
+    	)
+
     private Set<Link> links = new HashSet<>();
 }

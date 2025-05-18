@@ -26,4 +26,5 @@ public class Sessao {
 	private String usuario;
 	@Column(name = "ip", length = 50, nullable =  false)
 	private String ip;
+	
 }

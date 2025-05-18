@@ -35,15 +35,10 @@
 		<div class="form-container text-center">
 		<h2 class="mb-4">SESSAO</h2>
 		<form>
-			<div class="mb-3 text-start">
-				<label for="username" class="form-label">Nome de Usuário:</label> <input
-					type="text" class="form-control" id="#"
-					placeholder="Digite o nome do usuário">
-			</div>
-			<div class="mb-4 text-start">
-				<label for="ip" class="form-label">IP:</label> <input type="text"
-					class="form-control" id="#" placeholder="Digite o IP">
-			</div>
+		
+		
+		
+		
 			<div class="d-flex justify-content-between flex-wrap gap-2">
 				<button type="submit" class="btn custom-btn">Adicionar</button>
 				<button type="button" class="btn custom-btn">Buscar</button>

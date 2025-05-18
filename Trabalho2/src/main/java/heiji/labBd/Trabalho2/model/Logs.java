@@ -6,8 +6,6 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -22,8 +20,6 @@ import lombok.ToString;
 @ToString
 @Entity
 @Table(name = "logs")        
-@Inheritance(strategy = InheritanceType.JOINED)
-
 public class Logs {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,7 +27,7 @@ public class Logs {
 	private int idLogs;
 	@Column(name = "mensagens", length = 100 ,nullable = false)
 	private String mensagens;
-	@ManyToOne(targetEntity = Pagina.class, fetch = FetchType.LAZY)
+	@ManyToOne(targetEntity = Sessao.class, fetch = FetchType.LAZY)
 	@JoinColumn(name =  "idSessao", nullable = false)
 	private Sessao sessao;
 }

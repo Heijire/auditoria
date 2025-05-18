@@ -26,7 +26,7 @@
 		<li class="nav-item"><a class="nav-link active"
 			aria-current="page" href="index.jsp">TELA INICIAL</a></li>
 		<li class="nav-item"><a class="nav-link" href="sessao.jsp">SESSAO</a></li>
-		<li class="nav-item"><a class="nav-link" href="loo.jsp">LOG</a></li>
+		<li class="nav-item"><a class="nav-link" href="log.jsp">LOG</a></li>
 		<li class="nav-item"><a class="nav-link" href="requisissao.jsp">REQUISICAO</a></li>
 		<li class="nav-item"><a class="nav-link" href="pagina.jsp">PAGINA</a></li>
 		<li class="nav-item"><a class="nav-link" href="link.jsp">LINK</a></li>

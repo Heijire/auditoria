@@ -7,10 +7,7 @@ import heiji.labBd.Trabalho2.model.Link;
 
 public interface RepositoryLink extends JpaRepository<Link, Integer> {
 
-	
 	@Query(value = "Select udf_contar(:idLink)", nativeQuery = true)
 	public int quantidadespaginaslink(int idLink);
-	
-	
-	
+
 }
