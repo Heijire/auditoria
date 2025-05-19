@@ -18,7 +18,9 @@
 		<license/>
 	</licenses>
 	<developers>
-		<developer/>
+		<developer>
+			<name>Renato</name>
+		</developer> 
 	</developers>
 	<scm>
 		<connection/>

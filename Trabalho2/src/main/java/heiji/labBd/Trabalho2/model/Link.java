@@ -34,4 +34,11 @@ public class Link {
 	private String target;
     @ManyToMany(mappedBy = "links")
     private Set<Pagina> paginas = new HashSet<>();
+    public Set<Pagina> getPaginas() {
+        return paginas;
+    }
+
+    public void setPaginas(Set<Pagina> paginas) {
+        this.paginas = paginas;
+    }
 }

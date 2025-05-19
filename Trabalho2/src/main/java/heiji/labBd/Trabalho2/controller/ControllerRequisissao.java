@@ -24,14 +24,14 @@ public class ControllerRequisissao {
         return "requisissao";
     }
 
-    @GetMapping("/buscar-por-tempo")
+    @GetMapping("/buscarTempo")
     public String buscarPorTempo(@RequestParam("tempo") int tempo, Model model) {
         List<Requisissao> requisicoes = serviceRequisissao.procuratempo(tempo);
         model.addAttribute("requisissoes", requisicoes);  // plural
         return "requisissao";
     }
 
-    @GetMapping("/buscar-por-usuario")
+    @GetMapping("/buscarUsuario")
     public String buscarPorUsuario(@RequestParam("usuario") String usuario, Model model) {
         List<Requisissao> requisicoes = serviceRequisissao.RequesisaoUsuario(usuario);
         model.addAttribute("requisissoes", requisicoes);  // plural

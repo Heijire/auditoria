@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +52,7 @@ pageEncoding="UTF-8"%>
 					value="${sessao != null ? sessao.ip : ''}" required />
 			</div>
 
-			<button type="submit" class="custom-btn">Salvar</button>
+			<button type="submit" class="btn custom-btn">Salvar</button>
 		</form>
 		<form action="sessao/buscar" method="get"
 			class="mb-3 d-flex justify-content-center gap-2">

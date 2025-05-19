@@ -1,10 +1,11 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8"%>
-	<title>requisissao</title>
+	<meta charset="UTF-8">
+	<title>index</title>
 	<link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -32,20 +33,20 @@
 		<li class="nav-item"><a class="nav-link" href="link.jsp">LINK</a></li>
 	</ul>
 	<br />
-		<div class="form-container text-center">
-		<h2 class="mb-4">SESSAO</h2>
-		<form>
-		
-		
-		
-		
-			<div class="d-flex justify-content-between flex-wrap gap-2">
-				<button type="submit" class="btn custom-btn">Adicionar</button>
-				<button type="button" class="btn custom-btn">Buscar</button>
-				<button type="button" class="btn custom-btn">Atualiza</button>
-				<button type="button" class="btn custom-btn">Remove</button>
-			</div>
-		</form>
+	<div class="container text-center">
+		<h1>Tela Inicial</h1>
+		<br/>
+		<h2>Escolha qual dos cruds você deseja utilizar.</h2> 
+		<br/>
+		<div class="d-grid gap-2 col-6 mx-auto" role="group" aria-label="Basic outlined example">
+	<button type="submit" class="btn custom-btn" onclick="window.location.href='sessao.jsp'">SESSAO</button>
+	<button type="submit" class="btn custom-btn" onclick="window.location.href='log.jsp'">LOG</button>
+	<button type="submit" class="btn custom-btn" onclick="window.location.href='requisissao.jsp'">REQUISICAO</button>
+	<button type="submit" class="btn custom-btn" onclick="window.location.href='pagina.jsp'">PAGINA</button>
+	<button type="submit" class="btn custom-btn" onclick="window.location.href='link.jsp'">LINK</button>
+</div>
+
 	</div>
+
 </body>
 </html>

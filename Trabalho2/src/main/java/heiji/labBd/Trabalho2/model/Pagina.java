@@ -46,4 +46,7 @@ public class Pagina {
     	)
 
     private Set<Link> links = new HashSet<>();
+    public int getIdPagina() {
+        return idPagina;
+    }
 }
